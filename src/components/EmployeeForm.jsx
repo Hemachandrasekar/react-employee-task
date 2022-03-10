@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Input, Button, message } from 'antd';
 import { useDispatch } from 'react-redux';
-import { ADD_USER, EDIT_USER } from '../redux/actions/ActionTypes';
 import { addUser, editUser } from '../redux/actions/UserAction';
 import {
   HomeOutlined,
@@ -20,16 +19,7 @@ const layout = {
   },
 };
 
-const validateMessages = {
-  required: '${label} is required!',
-  types: {
-    email: '${label} is not a valid email!',
-    number: '${label} is not a valid number!',
-  },
-  number: {
-    range: '${label} must be between ${min} and ${max}',
-  },
-};
+
 
 const EmployeeForm = ({ setIsModalVisible, item, isEdit }) => {
   const { name = '', email = '', mobile = '', address = '', id = '' } = item;
@@ -58,7 +48,7 @@ const EmployeeForm = ({ setIsModalVisible, item, isEdit }) => {
         {...layout}
         name="employee-form"
         onFinish={onFinish}
-        validateMessages={validateMessages}
+       
         initialValues={{ id, name, email, mobile, address }}
       >
         {isEdit && (
