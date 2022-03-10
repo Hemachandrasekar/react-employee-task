@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.ant-select-arrow {
+  color: #fff !important;
+}
+
+.login-form-button {
+  width: 100%;
+}
+.ant-form {
+  border: 1px solid lightgray;
+  padding: 50px !important;
+}
+.form-group .ant-col {
+  max-width: 100%;
+}

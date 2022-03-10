@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import 'antd/dist/antd.css';
+import Login from './pages/Login';
+import { Provider } from 'react-redux';
+import {store} from './redux/store'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+        </Routes>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
